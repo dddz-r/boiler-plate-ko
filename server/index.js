@@ -1,6 +1,6 @@
 const express = require('express');//express안에 body-parser포함되서 따로 안써도 된다고함
 const app = express();
-const port = 3000 //아무 포트번호 지정
+const port = 5000 //아무 포트번호 지정
 // const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 app.use(cookieParser());
@@ -21,6 +21,10 @@ mongoose.connect(config.mongoURI, {
 
 app.get('/', (req, res) => { //'/'루트 디렉토리에 오면 Hello World 출력
   res.send('Hello World!')
+})
+
+app.get('/api/hello', (req, res) => {
+  res.send("hi~");
 })
 
 app.post('/api/users//register', (req, res) => { //라우터의 endpoint가 register
