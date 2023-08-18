@@ -1,7 +1,7 @@
 // import { axios } from 'axios';
 // import { response } from 'express';
 import React, { useState } from 'react'
-import { useDispatch, userDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { loginUser } from '../../../_actions/user_action';
 import { useNavigate } from 'react-router-dom';
 
@@ -37,9 +37,9 @@ function LoginPage(props) {
       if (response.payload.loginSuccess) {
         navigate('/') //props.history.push('/') 페이지 이동시 사용
       } else {
-        alert('Error˝')
+        alert('Error')
       }
-  }) //dispatch: action을 store로 전달(파라미터: 입력받은 데이터(state) )
+    }) //dispatch: action을 store로 전달(파라미터: 입력받은 데이터(state) )
 
     // redux 사용으로 해당코드는 action파일로 이동
     // Axios.post('/api/user/login', body)//index.js에 만들어둔 api랑 같은 주소
@@ -55,6 +55,7 @@ function LoginPage(props) {
       >
         <label>Email</label>
         <input type="email" value={Email} onChange={onEmailHandler} />
+        {/* 타이핑을 할 때 state를 바꿈(onChagne로) state가 바뀌면 value도 바뀌어서 타이핑이 가능 */}
         <label>Password</label>
         <input type="password" value={Password} onChange={onPasswordHandler} />
         <br />

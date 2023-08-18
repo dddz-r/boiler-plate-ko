@@ -27,7 +27,7 @@ app.get('/api/hello', (req, res) => {
   res.send("hi~");
 })
 
-app.post('/api/users//register', (req, res) => { //라우터의 endpoint가 register
+app.post('/api/users/register', (req, res) => { //라우터의 endpoint가 register
   //회원가입 할 때 필요한 정보를 client에서 가져와 DB에 넣음
 
   //모델 가져와서 인스턴스 생성//req.body에 json형태로 데이터 들어있는데 bodyparser에서 파싱해준 것
